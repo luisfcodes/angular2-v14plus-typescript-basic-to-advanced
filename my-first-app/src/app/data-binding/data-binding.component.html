@@ -1,0 +1,20 @@
+<h1> {{ name.toUpperCase() }} </h1>
+
+<hr>
+
+<h2>Property Binding</h2>
+<button [disabled]="isDisabled">Button</button>
+
+<hr>
+
+<h2>Event Binding</h2>
+<button (click)="alertInfo($event)">Evento</button>
+<div (mousemove)="mouseMoveTest($event)" style="background-color: red; width: 300px; height: 300px; text-align: center; line-height: 300px;">
+  {{ position.x }} - {{ position.y }}
+</div>
+
+<hr>
+
+<h2>Two-way Binding</h2>
+<input type="text" [(ngModel)]="name">
+{{ name }}
