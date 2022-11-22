@@ -10,6 +10,12 @@ export class StructuralDirectivesComponent implements OnInit {
   public condition = true
   public conditionClick = true
 
+  public list = [
+    { name: 'Luis Fernando' },
+    { name: 'Amanda Soares' },
+    { name: 'Felipe Morim' },
+  ]
+
   constructor() { }
 
   ngOnInit(): void {
@@ -20,5 +26,15 @@ export class StructuralDirectivesComponent implements OnInit {
 
   public onClick(){
     this.conditionClick = !this.conditionClick
+  }
+
+  public onClickAddList(){
+    this.list.push({
+      name: 'Isabela Souza'
+    })
+  }
+
+  public onClickEventList(index: number){
+    this.list.splice(index, 1)
   }
 }
