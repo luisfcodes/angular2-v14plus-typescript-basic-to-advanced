@@ -16,6 +16,8 @@ export class StructuralDirectivesComponent implements OnInit {
     { name: 'Felipe Morim' },
   ]
 
+  public name = 'Luis'
+
   constructor() { }
 
   ngOnInit(): void {
