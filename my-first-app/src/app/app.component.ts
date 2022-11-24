@@ -5,6 +5,7 @@ import {Component, OnInit } from '@angular/core';
   template: `
     <app-data-binding></app-data-binding>
     <app-structural-directives></app-structural-directives>
+    <app-attributes-directives></app-attributes-directives>
     <router-outlet></router-outlet>
   `
 })
