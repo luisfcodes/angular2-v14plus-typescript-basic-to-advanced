@@ -1,4 +1,4 @@
-<ng-content select="h1"></ng-content>
+<!-- <ng-content select="h1"></ng-content>
 
 <p [ngClass]="{'active': value, 'disabled': !value}">NgClass</p>
 <p [ngStyle]="{'height': height}">NgStyle</p>
@@ -8,10 +8,15 @@
 <input type="text" [(ngModel)]="name">
 <button (click)="add()">Adicionar</button>
 
-<li *ngFor="let item of list">{{ item.name }}</li> -->
+<li *ngFor="let item of list">{{ item.name }}</li>
 
 <ng-template [ngIf]="true">
   <p>true</p>
 </ng-template>
 
-<ng-content select="hr"></ng-content>
+<ng-content select="hr"></ng-content> -->
+
+<input type="text" [(ngModel)]="name">
+<button (click)="add()">Adicionar</button>
+
+<li *ngFor="let item of list">{{ item.name | uppercase }}</li>
