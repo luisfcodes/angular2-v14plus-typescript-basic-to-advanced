@@ -11,6 +11,7 @@ import {Component, OnInit } from '@angular/core';
     </app-attributes-directives>
     <router-outlet></router-outlet> -->
 
+    <app-new-component></app-new-component>
     <app-attributes-directives></app-attributes-directives>
   `
 })

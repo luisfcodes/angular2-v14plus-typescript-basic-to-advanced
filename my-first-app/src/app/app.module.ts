@@ -8,6 +8,7 @@ import { DataBindingComponent } from './data-binding/data-binding.component';
 import { FormsModule } from '@angular/forms';
 import { StructuralDirectivesComponent } from './structural-directives/structural-directives.component';
 import { AttributesDirectivesComponent } from './attributes-directives/attributes-directives.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -15,12 +16,13 @@ import { AttributesDirectivesComponent } from './attributes-directives/attribute
     TitleComponent,
     DataBindingComponent,
     StructuralDirectivesComponent,
-    AttributesDirectivesComponent
+    AttributesDirectivesComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]
