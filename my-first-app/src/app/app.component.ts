@@ -13,8 +13,11 @@ import {Component, OnInit, Output } from '@angular/core';
     <app-attributes-directives></app-attributes-directives> 
     <app-new-component></app-new-component> -->
 
-    <app-input [count]="addValue"></app-input>
-    <button (click)="countAdd()">+1</button>
+    <!-- <app-input [count]="addValue"></app-input>
+    <button (click)="countAdd()">+1</button> -->
+
+    <app-output></app-output>
+
     <router-outlet></router-outlet>
   `
 })
