@@ -14,7 +14,7 @@ import {Component, OnInit, Output } from '@angular/core';
     <app-new-component></app-new-component> -->
 
     <!-- <app-input [count]="addValue"></app-input>
-    <button (click)="countAdd()">+1</button> -->
+    <button (click)="countAdd()">+1</button>
 
     <app-output (sendData)="setData($event)"></app-output>
 
@@ -22,6 +22,9 @@ import {Component, OnInit, Output } from '@angular/core';
       <h1>{{ getData.name }}</h1>
       <h2>{{ getData.age }}</h2>
     </ng-template>
+    -->
+
+    <app-food-list></app-food-list>
 
     <router-outlet></router-outlet>
   `
