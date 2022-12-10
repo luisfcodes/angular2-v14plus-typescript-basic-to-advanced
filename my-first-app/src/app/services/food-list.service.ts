@@ -13,8 +13,12 @@ export class FoodListService {
 
   constructor() { }
 
-  getFoodList(){
+  public getFoodList(){
     return this.list
+  }
+
+  public foodListAddItem(item: string){
+    return this.list.push(item)
   }
 
 }

@@ -24,6 +24,7 @@ import {Component, OnInit, Output } from '@angular/core';
     </ng-template>
     -->
 
+    <app-food-add></app-food-add>
     <app-food-list></app-food-list>
 
     <router-outlet></router-outlet>
