@@ -13,6 +13,8 @@ export class FoodListComponent implements OnInit {
 
   ngOnInit(): void {
     this.foodList = this.foodListService.getFoodList()
+
+    this.foodListService.emitEvent.subscribe(res => alert(`Você adicionou => ${res} à lista.`))
   }
 
 }
