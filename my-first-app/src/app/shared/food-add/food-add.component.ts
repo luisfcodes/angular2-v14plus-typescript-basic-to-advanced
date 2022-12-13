@@ -8,13 +8,23 @@ import { FoodListService } from 'src/app/services/food-list.service';
 })
 export class FoodAddComponent implements OnInit {
 
+  public nameFood = ''
+
   constructor(private foodListService: FoodListService) { }
 
   ngOnInit(): void {
   }
 
   public addItem(item: string){
-    return this.foodListService.foodListAddItem(item)
+    return this.foodListService.foodListAddItem(item).subscribe(
+      {
+        next: res => {
+          this.nameFood = ''
+          return this.foodListService.foodListAlert(res)
+        },
+        error: error => error
+      }
+    )
   }
 
 }

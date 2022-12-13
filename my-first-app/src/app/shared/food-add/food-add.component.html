@@ -1,2 +1,2 @@
-<input type="text" #inputValue>
+<input type="text" #inputValue [(ngModel)]="nameFood">
 <button (click)="addItem(inputValue.value)">Add Item</button>
