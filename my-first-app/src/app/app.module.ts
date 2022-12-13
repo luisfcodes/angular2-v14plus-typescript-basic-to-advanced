@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { StructuralDirectivesComponent } from './structural-directives/structural-directives.component';
 import { AttributesDirectivesComponent } from './attributes-directives/attributes-directives.component';
 import { SharedModule } from './shared/shared.module';
+import { FormsComponent } from './forms/forms.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { SharedModule } from './shared/shared.module';
     DataBindingComponent,
     StructuralDirectivesComponent,
     AttributesDirectivesComponent,
+    FormsComponent,
   ],
   imports: [
     BrowserModule,

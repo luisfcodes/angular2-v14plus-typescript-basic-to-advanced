@@ -22,10 +22,10 @@ import {Component, OnInit, Output } from '@angular/core';
       <h1>{{ getData.name }}</h1>
       <h2>{{ getData.age }}</h2>
     </ng-template>
-    -->
-
     <app-food-add></app-food-add>
     <app-food-list></app-food-list>
+    -->
+    <app-forms></app-forms>
 
     <router-outlet></router-outlet>
   `
