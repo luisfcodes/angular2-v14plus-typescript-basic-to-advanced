@@ -4,7 +4,7 @@
   <span *ngIf="registerForm.get('firstName')?.errors && (registerForm.get('firstName')?.touched || registerForm.get('firstName')?.dirty)">
     Favor preencher o nome
   </span>
-  <button>Enviar</button>
+  <button [disabled]="registerForm.invalid">Enviar</button>
 </form>
 
 <!-- {{ registerForm.get('firstName')?.value }} -->
