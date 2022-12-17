@@ -9,7 +9,9 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms'
 export class ReactiveFormsComponent implements OnInit {
 
   public registerForm: FormGroup = this.formBuilder.group({
-    firstName: ['', Validators.required]
+    firstName: ['', Validators.required],
+    lastName: ['', [Validators.required, Validators.minLength(4)]],
+    email: ['', [Validators.required, Validators.email]]
   })
 
   constructor(private formBuilder: FormBuilder) { }

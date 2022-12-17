@@ -1,11 +1,30 @@
 <form [formGroup]="registerForm" (ngSubmit)="submitForm()">
-  <input type="text" formControlName="firstName">
+  <input type="text" formControlName="firstName" placeholder="Nome">
 
   <span *ngIf="registerForm.get('firstName')?.errors && (registerForm.get('firstName')?.touched || registerForm.get('firstName')?.dirty)">
     Favor preencher o nome
   </span>
+
+  <br><br>
+
+  <input type="text" formControlName="lastName" placeholder="Sobrenome" maxlength="15">
+  <span *ngIf="registerForm.get('lastName')?.errors && (registerForm.get('lastName')?.touched || registerForm.get('lastName')?.dirty)">
+    O sobrenome deve ter no minímo 4 caracteres
+  </span>
+
+  <br><br>
+
+  <input type="email" formControlName="email" placeholder="Email">
+  <span *ngIf="registerForm.get('email')?.errors && (registerForm.get('email')?.touched || registerForm.get('email')?.dirty)">
+    Preencha com email válido
+  </span>
+
+  <br><br>
+
   <button [disabled]="registerForm.invalid">Enviar</button>
 </form>
 
+<!-- {{ registerForm.get('lastName')?.errors | json }} -->
+{{ registerForm.get('email')?.errors | json }}
 <!-- {{ registerForm.get('firstName')?.value }} -->
-{{ registerForm.get('firstName')?.errors | json }}
+<!-- {{ registerForm.get('firstName')?.errors | json }} -->
