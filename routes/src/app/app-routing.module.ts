@@ -6,8 +6,12 @@ import { PageErrorComponent } from './pages/page-error/page-error.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent, pathMatch: 'full' },
-  { path: 'about', component: AboutComponent },
-  { path: '404', component: PageErrorComponent }
+  { path: 'about', component: AboutComponent, children: [
+    { path: 'about/:id/:username', component: AboutComponent }
+  ] },
+  { path: 'dashboard', loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule) },
+  { path: '404', component: PageErrorComponent },
+  { path: '**', redirectTo: '404' }
 ];
 
 @NgModule({
