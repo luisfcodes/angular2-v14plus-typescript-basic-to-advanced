@@ -1,0 +1,52 @@
+:host {
+  .pokemon {
+    position: relative;
+    display: flex;
+    width: 49%;
+    background-color: var(--white);
+    border-radius: 10px;
+    padding: 1.5rem;
+
+    &__status {
+      h2 {
+        font-size: 1.8rem;
+        font-style: italic;
+        font-weight: bold;
+      }
+
+      ul {
+        margin-top: .5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+
+        li {
+          background-color: var(--gray);
+          font-size: 0.9rem;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 100px;
+          max-width: 50%;
+          padding: .25rem;
+        }
+      }
+    }
+
+    &__image {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 6.875rem;
+      height: 5.625rem;
+      right: 1rem;
+      bottom: 1rem;
+      background: url('../../../assets/bgCard.svg');
+
+      img {
+        max-width: 80px;
+      }
+    }
+  }
+}
