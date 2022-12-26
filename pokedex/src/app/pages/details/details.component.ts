@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { forkJoin } from 'rxjs';
+import { PokeApiService } from 'src/app/service/poke-api.service';
 
 @Component({
   selector: 'app-details',
@@ -7,9 +10,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailsComponent implements OnInit {
 
-  constructor() { }
+  private urlPokemon = 'https://pokeapi.co/api/v2/pokemon'
+  private urlPokemonName = 'https://pokeapi.co/api/v2/pokemon-species'
+
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private pokeApiService: PokeApiService
+  ) { }
 
   ngOnInit(): void {
+    this.pokemon
   }
 
+  get pokemon(){
+    const id = this.activatedRoute.snapshot.params['id']
+    const pokemon = this.pokeApiService.apiGetPokemons(`${this.urlPokemon}/${id}`)
+    const name = this.pokeApiService.apiGetPokemons(`${this.urlPokemonName}/${id}`)
+
+    return forkJoin([pokemon, name]).subscribe({
+      next: res => console.log(res)
+    })
+  }
 }
