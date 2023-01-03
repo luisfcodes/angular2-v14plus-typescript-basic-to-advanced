@@ -1,4 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { ListComponent } from '../investments/components/list/list.component';
 
 import { BankingComponent } from './banking.component';
 
@@ -8,7 +9,7 @@ describe('BankingComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ BankingComponent ]
+      declarations: [ BankingComponent, ListComponent ]
     })
     .compileComponents();
 
@@ -36,9 +37,33 @@ describe('BankingComponent', () => {
     expect(component.getBalance).toEqual(60)
   })
 
+  it('(I) setWithdraw(): should transfer from savings to balance', () => {
+    let el = fixture.debugElement.nativeElement;
+
+    el.querySelector('#input-withdraw').value = "10"
+    el.querySelector('#withdraw').click()
+    fixture.detectChanges()
+
+    expect(el.querySelector('#get-balance').textContent).toEqual("60")
+    expect(component.getSavings).toEqual(0)
+    expect(component.getBalance).toEqual(60)
+  })
+
   it('(U) setDeposit(): should transfer from balance to savings', () => {
     component.setDeposit('10')
 
+    expect(component.getSavings).toEqual(20)
+    expect(component.getBalance).toEqual(40)
+  })
+
+  it('(I) setDeposit(): should transfer from balance to savings', () => {
+    let el = fixture.debugElement.nativeElement;
+
+    el.querySelector('#input-deposit').value = "10"
+    el.querySelector('#deposit').click()
+    fixture.detectChanges()
+
+    expect(el.querySelector('#get-savings').textContent).toEqual("20")
     expect(component.getSavings).toEqual(20)
     expect(component.getBalance).toEqual(40)
   })

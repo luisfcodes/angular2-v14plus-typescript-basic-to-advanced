@@ -5,13 +5,15 @@
 </p>
 
 <p>
-  Poupança: R$ {{ getSavings }}
-  <input type="number" #withdraw>
-  <button (click)="setWithdraw(withdraw.value)">Sacar</button>
+  Poupança: R$ <span id="get-savings">{{ getSavings }}</span>
+  <input id="input-withdraw" type="number" #withdraw>
+  <button id="withdraw" (click)="setWithdraw(withdraw.value)">Sacar</button>
 </p>
 
 <p>
-  Carteira: R$ {{ getBalance }}
-  <input type="number" #deposit>
-  <button (click)="setDeposit(deposit.value)">Depositar</button>
+  Carteira: R$ <span id="get-balance">{{ getBalance }}</span>
+  <input id="input-deposit" type="number" #deposit>
+  <button id="deposit" (click)="setDeposit(deposit.value)">Depositar</button>
 </p>
+
+<app-list></app-list>
