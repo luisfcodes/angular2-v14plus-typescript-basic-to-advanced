@@ -6,7 +6,15 @@ const routes: Routes = [
   {
     path: '',
     component: HomeComponent
-  }
+  },
+  {
+    path: 'dashboard',
+    component: HomeComponent
+  },
+  {
+    path: 'account',
+    component: HomeComponent
+  },
 ];
 
 @NgModule({
